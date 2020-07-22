@@ -4,8 +4,10 @@
 using namespace std;
 void saludo(string saludar){
     //RESUARANTE PROYECTO FINAL
+    //Hola 
 
     cout<<"**Bienvenido a RESTAURANTE EL DELFIN**"<<saludar<<endl;
+
 }
 void listademesas(int numerodemesa){
     int mesas=20;
