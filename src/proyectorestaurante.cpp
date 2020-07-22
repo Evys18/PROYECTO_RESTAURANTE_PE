@@ -3,9 +3,9 @@
 #include <iomanip>
 using namespace std;
 void saludo(string saludar){
+    //RESUARANTE PROYECTO FINAL
 
     cout<<"Bienvenido a RESTAURANTE LAS TEJAS"<<saludar<<endl;
-
 }
 void listademesas(int numerodemesa){
     int mesas=20;
@@ -18,9 +18,7 @@ void listademesas(int numerodemesa){
         {
             cout<<endl;
         }
-    }
-    
-
+    }  
 }
 
 int main(){
