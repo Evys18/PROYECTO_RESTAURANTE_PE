@@ -6,6 +6,7 @@ double menu(double platillos){
     int acumulador, contador, cantidad, opcion, precio;
     double menu=opcion;
     char seguir;
+    //cambio a funcion***
     do
     {
         cout<<"[1]- 5 tacos, arroz y frigoles-------------------LPS.80"<<endl;
@@ -64,7 +65,6 @@ int main(){
 
         case 3:
            cout<<"Que desea para llevar: ";
-           cout<<menu(platillos)<<endl;
         default:
             cout<<"Opcion no valida"<<endl;
             break;
