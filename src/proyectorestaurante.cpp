@@ -1,6 +1,6 @@
 #include<iostream>
 #include<string>
-#include <iomanip>
+#include<iomanip>
 using namespace std;
 double menu(double platillos){
     double menu=platillos;
@@ -37,7 +37,20 @@ double menu(double platillos){
 int main(){
     int opcion,Nmesa, platillos, saludo;
     string nombre;
-    cout<<"******BIENVENIDO A RESTAURANTE EL DELFIN*******"<<endl;
+    int Nmesas[10];  //Implementacion del arreglo de mesas
+    Nmesas[0]=1;
+    Nmesas[1]=2;
+    Nmesas[2]=3;
+    Nmesas[3]=4;
+    Nmesas[4]=5;
+    Nmesas[5]=6;
+    Nmesas[6]=7;
+    Nmesas[7]=8;
+    Nmesas[8]=9;
+    Nmesas[9]=10;
+    cout<<"          ==================================================          "<<endl;
+    cout<<"                  BIENVENIDO A RESTAURANTE EL DELFIN                  "<<endl;
+    cout<<"          ==================================================          "<<endl;
     cout<<"Por favor ingrese la opcion segun sea su caso:"<<endl;
     cout<<"1.Ya cuenta con reservacion"<<endl;
     cout<<"2.No cuenta con reservacion"<<endl;
@@ -59,8 +72,20 @@ int main(){
             cout<<menu(platillos)<<endl;
             break;
         case 2:
-           cout<<"Las mesas disponiles son: ";
-           cout<<"Que numero de mesa desea: "<<endl;
+           cout<<"========================================================================"<<endl;
+           cout<<"A continuacion se le mostrara las mesas que estan y no estan disponibles:"<<endl;
+             for (int i = 0; i < 4; i++)
+                {
+                    cout<<"Mesa "<<Nmesas[i]<<"    Si esta Disponible"<<endl;
+                }
+           cout<<"Las mesas no disponiles son: "<<endl;
+              for (int i =5; i < 10; i++)
+
+                {
+                    cout<<"Mesa "<< Nmesas[i]<<"  No se encuentra disponible"<<endl;
+                }
+   
+           cout<<"Que numero de mesa desea: ";
            cin >>Nmesa;
            break;
 
