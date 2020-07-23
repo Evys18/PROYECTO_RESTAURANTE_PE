@@ -3,14 +3,15 @@
 #include <iomanip>
 using namespace std;
 double menu(double platillos){
+    double menu=platillos;
     int acumulador, contador, cantidad, opcion, precio;
-    double menu=opcion;
     char seguir;
     //cambio a funcion***
     do
     {
         cout<<"[1]- 5 tacos, arroz y frigoles-------------------LPS.80"<<endl;
         cout<<"[2]-Enchiladas con queso, arroz y frioles--------LPS.100"<<endl;
+        cin>>opcion;
         switch (opcion)
         {
         case 1:
