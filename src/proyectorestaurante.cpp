@@ -1,37 +1,59 @@
 #include<iostream>
 #include<string>
 #include<iomanip>
+#include <math.h>
 using namespace std;
-double menu(double platillos){
-    double menu=platillos;
-    int acumulador, contador, cantidad, opcion, precio;
+int menu(int platillos){
+    int opcion, contador=0, acumulador=0, cantidad, Tpagar, menu1=90, menu2=150, menu3=110;
     char seguir;
-    //cambio a funcion***
     do
     {
-        cout<<"[1]- 5 tacos, arroz y frigoles-------------------LPS.80"<<endl;
-        cout<<"[2]-Enchiladas con queso, arroz y frioles--------LPS.100"<<endl;
-        cin>>opcion;
+        cout<<"A continuacion se le presenta el menu de la comida elija lo que sea de su gusto"<<endl;
+        cout<<"[1]-Hamburguesa --------------------LPS 90.00"<<endl;
+        cout<<"[2]-Pizza---------------------------LPS 150.00"<<endl;
+        cout<<"[3]-tacos---------------------------LPS 110.00"<<endl;
+        cin >>opcion;
         switch (opcion)
         {
         case 1:
-        cout<<"La orden es: "<<endl;
-        acumulador+=cantidad;
-        contador++;
-            cout<<"Desea seguir comprando: "<<endl;
+            cout<<"El plato viene incluido con papas y refresco"<<endl;
+            cout<<"El precio del plato es de "<<menu1<<" Lempiras "<<endl;
+            cout<<"Cuantas hamburguesas desea comprar"<<endl;
+            cin >>cantidad;
+            cantidad++;
+            cout<<"Desea seguir ordenando, o avanzar a la cancelacion de su pedido s/n?";
             cin >>seguir;
+            acumulador=menu1*cantidad;
             break;
         case 2:
-        cout<<"La orden es: "<<endl;
-        acumulador+=cantidad;
-        contador++;
-            cout<<"Desea seguir comprando: "<<endl;
+            cout<<"El plato viene incluido con refresco"<<endl;
+            cout<<"El precio del plato es de "<<menu2<<" Lempiras "<<endl;
+            cout<<"Cuantas pizzas desea comprar"<<endl;
+            cin >>cantidad;
+            cantidad++;
+            cout<<"Desea seguir ordenando, o avanzar a la cancelacion de su pedido s/n?";
             cin >>seguir;
+            acumulador=menu2*cantidad;
+            break;
+        case 3:
+            cout<<"El plato viene incluido con refresco"<<endl;
+            cout<<"El precio del plato es de "<<menu3<<" Lempiras "<<endl;
+            cout<<"Cuantas ordenes desea comprar"<<endl;
+            cin >>cantidad;
+            cantidad++;
+            cout<<"Desea seguir ordenando, o avanzar a la cancelacion de su pedido s/n?";
+            cin >>seguir;
+            acumulador=menu3*cantidad;
+            break;
         default:
             break;
         }
     } while (seguir!='n');
-    return menu;
+    Tpagar=acumulador*cantidad;
+    cout<<"Ha hecho la compra de "<<cantidad<<" Ordenes"<<endl;
+    cout<<"Su total a pagar es de :"<<Tpagar<<" Lempiras sin ISV includio"<< endl;
+    cout<<"***GRACIAS POR SU COMPRA***";
+    return 0;
 }
 
 int main(){
@@ -59,11 +81,11 @@ int main(){
         switch (opcion)
         {
         case 1:
-            cout<<"A nombre de quien esta la reservacion:"<<endl;
+            cout<<"Ingrese el nombre para validar su reservacion:"<<endl;
             cin >>nombre;
             if (nombre=="bertha")
             {
-                cout<<"La reservacion esta a nombre de bertha, la mesa asignada es:"<<endl;
+                cout<<"La reservacion esta a nombre de bertha, la mesa asignada es:"<<Nmesas[8]<<endl;
             }
             else
             {
