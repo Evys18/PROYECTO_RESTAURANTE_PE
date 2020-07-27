@@ -5,14 +5,17 @@
 using namespace std;
 
 int menu(int platillos){
-    int opcion, contador=0, TotalAcumulador=0, acumulador=0, cantidad, Tpagar, menu1=200, menu2=150, menu3=110;
+    int opcion, contador=0, TotalAcumulador=0, subTotalDetalle= 0, totalPagar=0, cantidad, Tpagar, menu1=200, menu2=150, menu3=110, menu4=320, menu5=340;
     char seguir;
+    double ISV = 0.15;
     do
     {
         cout<<"A continuacion se le presenta el menu de la comida elija lo que sea de su gusto"<<endl;
         cout<<"[1]-LANGOSTA --------------------LPS 200.00"<<endl;
         cout<<"[2]-CAMARONES AL AJILLO----------LPS 150.00"<<endl;
         cout<<"[3]-FILETE DE PESCADO------------LPS 110.00"<<endl;
+        cout<<"[4]-SOPON MARINERO---------------LPS 320.00"<<endl;
+        cout<<"[5]-CAZUELA DE MARISCO-----------LPS 340.00"<<endl;
         cin >>opcion;
         switch (opcion)
         {
@@ -24,17 +27,23 @@ int menu(int platillos){
             cout<<"Desea seguir ordenando, o avanzar a la cancelacion de su pedido s/n?";
             cin >>seguir;
             contador++;
-            acumulador=menu1*cantidad;
+            subTotalDetalle= menu1 * cantidad;
+            cout << "El subTotalDetalle es de: " << subTotalDetalle << endl;
+            ISV = subTotalDetalle * ISV ;
+            totalPagar = subTotalDetalle + ISV;
             break;
         case 2:
             cout<<"El plato viene incluido con tostones, ensalada de lechuga, arroz y refresco"<<endl;
             cout<<"El precio del plato es de "<<menu2<<" Lempiras "<<endl;
             cout<<"Cuantos camarones desea ordenar"<<endl;
             cin >>cantidad;
-            cout<<"Desea seguir ordenando, o avanzar a la cancelacion de su pedido s/n?";
+            cout<<"Desea seguir ordenando, o avanzar a la cancelacion de su pedido s/n?"<< endl;    
             cin >>seguir;
             contador++;
-            acumulador=menu2*cantidad;
+            subTotalDetalle= menu2 * cantidad;
+            cout << "El subTotalDetalle es de: " << subTotalDetalle << endl;
+            ISV = subTotalDetalle * ISV ;
+            totalPagar = subTotalDetalle + ISV;
             break;
         case 3:
             cout<<"El plato viene incluido con tajadas, rise and beans, encurtido y refresco"<<endl;
@@ -44,16 +53,45 @@ int menu(int platillos){
             cout<<"Desea seguir ordenando, o avanzar a la cancelacion de su pedido s/n?";
             cin >>seguir;
             contador++;
-            acumulador=menu3*cantidad;
+             subTotalDetalle= menu3 * cantidad;
+            cout << "El subTotalDetalle es de: " << subTotalDetalle << endl;
+            ISV = subTotalDetalle * ISV ;
+            totalPagar = subTotalDetalle + ISV;
+            break;
+        case 4:
+            cout<<"El plato viene incluido con una Exquisita combinacion de Langosta, Camaron, Caracol, King Crab"<<endl;
+            cout<<"El precio del plato es de "<<menu4<<" Lempiras "<<endl;
+            cout<<"Cuantas Sopas Marineras desea ordenar"<<endl;
+            cin >>cantidad;
+            cout<<"Desea seguir ordenando, o avanzar a la cancelacion de su pedido s/n?";
+            cin >>seguir;
+            contador++;
+            subTotalDetalle= menu4 * cantidad;
+            cout << "El subTotalDetalle es de: " << subTotalDetalle << endl;
+            ISV = subTotalDetalle * ISV ;
+            totalPagar = subTotalDetalle + ISV;    
+            break;
+        case 5:
+            cout<<"El plato viene incluido con una Exquisita combinacion de Langosta, Camaron, Caracol, King Crab, Mejillones, recubierto con exquisito queso"<<endl;
+            cout<<"El precio del plato es de "<<menu5<<" Lempiras "<<endl;
+            cout<<"Cuantas Cazuelas de Marisco desea ordenar"<<endl;
+            cin >>cantidad;
+            cout<<"Desea seguir ordenando, o avanzar a la cancelacion de su pedido s/n?";
+            cin >>seguir;
+            contador++;
+            subTotalDetalle= menu5 * cantidad;
+            cout << "El subTotalDetalle es de: " << subTotalDetalle << endl;
+            ISV = subTotalDetalle * ISV ;
+            totalPagar = subTotalDetalle + ISV;    
             break;
         default:
             break;
         }
-        TotalAcumulador+=acumulador;
+        TotalAcumulador+=totalPagar;
     } while (seguir!='n');
-    Tpagar=TotalAcumulador;
+    totalPagar=TotalAcumulador;
     cout<<"Ha hecho la compra de "<<contador<<" Ordenes"<<endl;
-    cout<<"Su total a pagar es de :"<<Tpagar<<" Lempiras sin ISV includio"<< endl;
+    cout<<"Su total a pagar es de :"<<totalPagar<<" Lempiras con ISV incluido"<< endl;
     cout<<"***GRACIAS POR SU COMPRA***"<<endl;
     return 0;
 }
@@ -85,9 +123,9 @@ int main(){
         case 1:
             cout<<"Ingrese el nombre para validar su reservacion:"<<endl;
             cin >>nombre;
-            if (nombre=="bertha")
+            if (nombre=="Bertha")
             {
-                cout<<"La reservacion esta a nombre de bertha, la mesa asignada es:"<<Nmesas[8]<<endl;
+                cout<<"La reservacion esta a nombre de Bertha, la mesa asignada es:"<<Nmesas[8]<<endl;
             }
             else
             {
@@ -125,11 +163,12 @@ int main(){
            break;
 
         case 3:
-           cout<<"Que desea para llevar: ";
-           cout<<menu(platillos)<<endl;
+           cout<< "Que desea para llevar: ";
+           cout<< menu(platillos)<<endl;
         default:
-            cout<<"Opcion no valida"<<endl;
+           cout<< "No contamos con ese platillo"<<endl;
             break;
         }   
+    system("Pause");    
     return 0;
 }
