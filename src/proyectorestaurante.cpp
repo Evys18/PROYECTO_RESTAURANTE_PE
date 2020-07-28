@@ -4,9 +4,10 @@
 #include <math.h>
 using namespace std;
 
-int menu(int platillos){
-    int opcion, contador=0, TotalAcumulador=0, acumulador=0, cantidad, Tpagar, menu1=200, menu2=150, menu3=110;
+int menu(){
+    int opcion, contador=0, Detalle=0, TotalAcumulador=0, acumulador=0, cantidad, Tpagar, menu1=200, menu2=150, menu3=110;
     char seguir;
+    double const ISV=0.15;
     do
     {
         cout<<"A continuacion se le presenta el menu de la comida elija lo que sea de su gusto"<<endl;
@@ -49,16 +50,23 @@ int menu(int platillos){
         default:
             break;
         }
-        TotalAcumulador+=acumulador;
+        cout<<Factura()<<endl;
     } while (seguir!='n');
-    Tpagar=TotalAcumulador;
+     return 0;
+}
+int Factura(){
+    int Tpagar, Detalle, TotalAcumulador, contador, acumulador,ISV;
+    TotalAcumulador+=acumulador;
+    Detalle=TotalAcumulador*ISV;
+    Tpagar=Detalle+TotalAcumulador;
     cout<<"Ha hecho la compra de "<<contador<<" Ordenes"<<endl;
-    cout<<"Su total a pagar es de :"<<Tpagar<<" Lempiras sin ISV includio"<< endl;
-    cout<<"***GRACIAS POR SU COMPRA***"<<endl;
+    cout<<"el Subtotal a pagar es de :"<<TotalAcumulador<<" Lempiras"<< endl;
+    cout<<" ISV: "<<Detalle<<endl;
+    cout<<"El total a pagar de la factura es: "<<Tpagar<<endl;
     return 0;
 }
 int main(){
-    int opcion,Nmesa, platillos, saludo;
+    int opcion, Nmesa, platillos, saludo;
     string nombre;
     int Nmesas[10];  //Implementacion del arreglo de mesas
     Nmesas[0]=1;
@@ -93,7 +101,7 @@ int main(){
             {
                 cout<<"Esa reservacion no existe"<<endl;
             }
-            cout<<menu(platillos)<<endl;
+            cout<<menu()<<endl;
             break;
         case 2:
            cout<<"========================================================================"<<endl;
@@ -121,12 +129,12 @@ int main(){
    
            cout<<"Que numero de mesa desea: ";
            cin >>Nmesa;
-           cout<<menu(platillos)<<endl;
+           cout<<menu()<<endl;
            break;
 
         case 3:
            cout<<"Que desea para llevar: ";
-           cout<<menu(platillos)<<endl;
+           cout<<menu()<<endl;
         default:
             cout<<"Opcion no valida"<<endl;
             break;
