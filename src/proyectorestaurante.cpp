@@ -50,21 +50,10 @@ int menu(){
         default:
             break;
         }
-        cout<<Factura()<<endl;
     } while (seguir!='n');
      return 0;
 }
-int Factura(){
-    int Tpagar, Detalle, TotalAcumulador, contador, acumulador,ISV;
-    TotalAcumulador+=acumulador;
-    Detalle=TotalAcumulador*ISV;
-    Tpagar=Detalle+TotalAcumulador;
-    cout<<"Ha hecho la compra de "<<contador<<" Ordenes"<<endl;
-    cout<<"el Subtotal a pagar es de :"<<TotalAcumulador<<" Lempiras"<< endl;
-    cout<<" ISV: "<<Detalle<<endl;
-    cout<<"El total a pagar de la factura es: "<<Tpagar<<endl;
-    return 0;
-}
+
 int main(){
     int opcion, Nmesa, platillos, saludo;
     string nombre;
